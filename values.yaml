@@ -1,0 +1,25 @@
+deployment:
+  name:
+  replicas: 2
+container:
+  name:
+  resources: {}
+#     limits:
+#       memory: 1024Mi
+#       cpu: 500m
+#     requests:
+#       memory: 512Mi
+#       cpu: 100m
+service:
+  name:
+  port: 8080
+image:
+  name: t-immunoglobulin-therapy-assignment-service
+  tag: latest
+  pullPolicy: IfNotPresent
+hpa:
+  enabled: false
+  name:
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
