@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: t-immunoglobulin-therapy-assignment-service
+data:
+  config.json: |
+    {
+      "welcome": {{ pluck .Values.global.env .Values.welcome | quote }},
+      "name": {{ pluck .Values.global.env .Values.name | quote }}
+    }
